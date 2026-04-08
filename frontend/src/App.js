@@ -5,7 +5,7 @@ function App() {
   const [status, setStatus] = useState(null);
 
   const fetchStatus = async () => {
-    const res = await axios.get("http://localhost:5000/status");
+    const res = await axios.get("https://elevator-backend-d3zm.onrender.com/status");
     setStatus(res.data);
   };
 
@@ -16,7 +16,7 @@ function App() {
   }, []);
 
   const requestElevator = async (floor) => {
-    await axios.post("http://localhost:5000/request", { floor });
+    await axios.post("https://elevator-backend-d3zm.onrender.com/request", { floor });
   };
 
   return (
